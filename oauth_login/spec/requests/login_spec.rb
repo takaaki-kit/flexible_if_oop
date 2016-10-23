@@ -33,7 +33,6 @@ describe 'GET /auth/google/callback' do
         get(oauth_callbacks_path(provider: :google))
         follow_redirect!
       }.to change { User.count }.by(0)
-      puts User.all
       expect(response.body).to include('ユーザの名前')
     end
   end
