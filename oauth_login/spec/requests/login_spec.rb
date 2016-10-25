@@ -27,7 +27,7 @@ describe 'GET /auth/google/callback' do
   end
 
   context 'すでに登録済みのユーザの場合' do
-    it 'ログイン状態になっていること' do
+    it 'ログイン状態でかつ新しく登録されていないこと' do
       User.create!(uid: '1234567890', name: 'ユーザの名前', email: 'user@gmail.com')
       expect {
         get(oauth_callbacks_path(provider: :google))
