@@ -46,5 +46,5 @@ run {
   }
 }
 
-//mainClassName = 'Main'
+mainClassName = 'Main'
 test.dependsOn 'cleanTest'
