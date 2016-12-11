@@ -5,5 +5,9 @@ public class Main {
         System.out.println("wwwwwww");
         Aho aho = new Aho("unkooooooooooo");
         aho.boke();
+
+        IfManager manager = new IfManager();
+        manager.create();
+        manager.select(0);
     }
 }
