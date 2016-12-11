@@ -15,6 +15,6 @@ public class IfRepository {
     }
 
     public void select(int number) {
-        this.repository.get(number).create();
+        this.repository.get(number).exec();
     }
 }
