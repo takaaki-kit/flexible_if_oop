@@ -1,13 +1,14 @@
 public class If {
-    private int number;
+    Condition condition;
+
     public If() {
     }
 
-    public void create() {
-        System.out.println("call If.create");
+    public void create(Condition condition) {
+        this.condition = condition;
     }
 
-    public void exec() {
-        System.out.println("call exec");
+    public boolean exec() {
+        return this.condition.run();
     }
 }

@@ -7,14 +7,13 @@ public class IfRepository {
         this.repository = new ArrayList<If>();
     }
 
-    public void create() {
+    public void create(Condition condition) {
         If new_if = new If();
-        new_if.create();
+        new_if.create(condition);
         this.repository.add(new_if);
-        System.out.println("call IfRepository.create");
     }
 
-    public void select(int number) {
-        this.repository.get(number).exec();
+    public boolean select(int number) {
+        return this.repository.get(number).exec();
     }
 }
