@@ -9,6 +9,10 @@ public class If {
     }
 
     public boolean exec(int number) {
-        return this.condition.run(number);
+        //もし条件式の実行結果がtrueであれば、ifブロックの中のステートメントを実行させる
+        if(this.condition.run(number)) {
+            this.condition.result();
+        }
+        return true;
     }
 }

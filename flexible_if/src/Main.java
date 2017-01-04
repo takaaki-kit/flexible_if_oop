@@ -21,11 +21,7 @@ public class Main {
         //すべてオブジェクト化しておけば任意のステートメントを実行可能
         //
         // なお、selectに与える引数のnumberが条件式で使われる
-        if(repository.select(3)) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
+        repository.select(3);
     }
 }
 
