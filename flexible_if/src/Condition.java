@@ -1,5 +1,5 @@
 public class Condition {
-    public boolean run() {
+    public boolean run(int number) {
         return true;
     }
 }
