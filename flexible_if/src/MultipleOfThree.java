@@ -1,11 +1,9 @@
 public class MultipleOfThree extends Condition{
-    int number;
-
-    public MultipleOfThree(int number) {
-        this.number = number;
+    public MultipleOfThree() {
     }
-    public boolean run() {
+
+    public boolean run(int number) {
         System.out.println("exec multiple of three");
-        return this.number % 3 == 0;
+        return number % 3 == 0;
     }
 }

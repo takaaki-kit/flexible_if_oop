@@ -8,7 +8,7 @@ public class If {
         this.condition = condition;
     }
 
-    public boolean exec() {
-        return this.condition.run();
+    public boolean exec(int number) {
+        return this.condition.run(number);
     }
 }

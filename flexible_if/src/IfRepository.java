@@ -14,6 +14,6 @@ public class IfRepository {
     }
 
     public boolean select(int number) {
-        return this.repository.get(number).exec();
+        return this.repository.get(number).exec(number);
     }
 }

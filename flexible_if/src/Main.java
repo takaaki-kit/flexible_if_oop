@@ -6,18 +6,14 @@ public class Main {
         aho.boke();
 
         IfRepository repository = new IfRepository();
-        MultipleOfThree three = new MultipleOfThree(5);
+        MultipleOfThree three = new MultipleOfThree();
         repository.create(three);
+        repository.select(0);
         //createするときにどの条件式を持ったクラスを渡すかを決めてやる
         //selectされたときにはその条件式を実行する
         //実行のエントリポイントはrunなど=>templateメソッド
         //
         //オブジェクトは関数へのエイリアス
-        if(repository.select(0)) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
     }
 }
 
