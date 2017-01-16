@@ -13,7 +13,7 @@ public class IfRepository {
         this.repository.add(new_if);
     }
 
-    public boolean select(int number) {
-        return this.repository.get(number).exec(number);
+    public void select(int number) {
+        this.repository.get(number).exec(number);
     }
 }
