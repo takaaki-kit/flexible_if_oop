@@ -1,8 +1,4 @@
-public class Condition {
-    public boolean run(int number) {
-        return true;
-    }
-
-    public void result() {
-    }
+abstract public class Condition {
+    abstract public boolean run(int number);
+    abstract public void result();
 }
