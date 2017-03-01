@@ -1,10 +1,5 @@
-import unko.Aho;
-
 public class Main {
     public static void main(String[] args) {
-        Aho aho = new Aho("unkooooooooooo");
-        aho.boke();
-
         IfRepository repository = new IfRepository();
         MultipleOfThree three = new MultipleOfThree();
         MultipleOfFive five = new MultipleOfFive();
