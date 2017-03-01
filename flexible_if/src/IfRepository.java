@@ -14,6 +14,10 @@ public class IfRepository {
     }
 
     public void select(int number) {
-        this.repository.get(number).exec(number);
+        for(If statement : repository){
+            if(statement.exec(number)){
+                return;
+            }
+        }
     }
 }

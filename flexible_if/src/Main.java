@@ -7,8 +7,10 @@ public class Main {
 
         IfRepository repository = new IfRepository();
         MultipleOfThree three = new MultipleOfThree();
+        MultipleOfFive five = new MultipleOfFive();
         repository.create(three);
-        repository.select(0);
+        repository.create(five);
+        repository.select(1);
         //createするときにどの条件式を持ったクラスを渡すかを決めてやる
         //selectされたときにはその条件式を実行する
         //実行のエントリポイントはrunなど=>templateメソッド
