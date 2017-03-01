@@ -1,11 +1,11 @@
-public class MultipleOfThree extends Condition{
+public class MultipleOfThree implements Condition{
     public MultipleOfThree() {
     }
 
     @Override
     public boolean run(int number) {
         System.out.println("exec condition @ MultipleOfThree");
-        return number - 3 == 0;
+        return number % 3 == 0;
     }
 
     @Override

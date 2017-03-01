@@ -1,4 +1,4 @@
-public class MultipleOfFive extends Condition{
+public class MultipleOfFive implements Condition{
     public MultipleOfFive() {
     }
 
