@@ -7,7 +7,7 @@ public class If {
 
     public boolean exec(int number) {
         if( this.condition.run(number) ) {
-            this.condition.result();
+            this.condition.result(number);
             return true;
         }
         return false;
