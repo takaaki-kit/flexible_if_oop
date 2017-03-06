@@ -11,7 +11,7 @@ public class If {
                 this.condition.select(number);
                 return true;
             }
-            this.condition.result(number);
+            this.condition.result();
             return true;
         }
         return false;

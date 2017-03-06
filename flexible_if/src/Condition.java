@@ -2,7 +2,7 @@ public abstract class Condition {
     IfRepository nest_repository = null;
 
     public abstract boolean run(int number);
-    public abstract void result(int number);
+    public abstract void result();
 
     public void nest(IfRepository nest_repository) {
         this.nest_repository = nest_repository;

@@ -20,7 +20,7 @@ public class Main {
             }
 
             @Override
-            public void result(int number){
+            public void result(){
                 System.out.println("exec statement @ MultipleOfFive");
             }
         });
@@ -39,7 +39,7 @@ public class Main {
         }
 
         @Override
-        public void result(int number) {
+        public void result() {
             System.out.println("exec statement @ NestExample1");
         }
     }
@@ -55,7 +55,7 @@ public class Main {
         }
 
         @Override
-        public void result(int number) {
+        public void result() {
             System.out.println("exec statement @ NestExample2");
         }
     }
@@ -71,7 +71,7 @@ public class Main {
         }
 
         @Override
-        public void result(int number) {
+        public void result() {
             System.out.println("exec statement @ MultipleOfThree");
         }
     }
