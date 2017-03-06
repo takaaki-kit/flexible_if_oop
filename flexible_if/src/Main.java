@@ -2,9 +2,16 @@ public class Main {
     public static void main(String[] args) {
         IfRepository repository = new IfRepository();
         MultipleOfThree three = new MultipleOfThree();
-        Nestaro nestaro = new Nestaro();
         repository.create(three);
-        repository.create(nestaro);
+
+        IfRepository nest_repository = new IfRepository();
+        NestExample1 nest_example1 = new NestExample1();
+        NestExample2 nest_example2 = new NestExample2();
+        nest_repository.create(nest_example1);
+        nest_repository.create(nest_example2);
+
+        three.nest(nest_repository);
+
         repository.create(new Condition(){
             @Override
             public boolean run(int number){
@@ -18,10 +25,42 @@ public class Main {
             }
         });
 
-        repository.select(26);
+        repository.select(33);
     }
 
-    private static class MultipleOfThree implements Condition{
+    private static class NestExample1 extends Condition{
+        public NestExample1() {
+        }
+
+        @Override
+        public boolean run(int number) {
+            System.out.println("exec condition @ NestExample1");
+            return number % 7 == 0;
+        }
+
+        @Override
+        public void result(int number) {
+            System.out.println("exec statement @ NestExample1");
+        }
+    }
+
+    private static class NestExample2 extends Condition{
+        public NestExample2() {
+        }
+
+        @Override
+        public boolean run(int number) {
+            System.out.println("exec condition @ NestExample2");
+            return number % 11 == 0;
+        }
+
+        @Override
+        public void result(int number) {
+            System.out.println("exec statement @ NestExample2");
+        }
+    }
+
+    private static class MultipleOfThree extends Condition{
         public MultipleOfThree() {
         }
 
@@ -34,49 +73,6 @@ public class Main {
         @Override
         public void result(int number) {
             System.out.println("exec statement @ MultipleOfThree");
-        }
-    }
-
-    private static class Nestaro implements Condition{
-        public Nestaro() {
-        }
-
-        @Override
-        public boolean run(int number) {
-            System.out.println("exec condition @ MultipleOfThree");
-            return number % 13 == 0;
-        }
-
-        @Override
-        public void result(int number) {
-            IfRepository repository = new IfRepository();
-
-            repository.create(new Condition(){
-                @Override
-                public boolean run(int number){
-                    System.out.println("exec condition @ nest 4");
-                    return number % 4 == 0;
-                }
-
-                @Override
-                public void result(int number){
-                    System.out.println("exec statement @ nest 4");
-                }
-            });
-
-            repository.create(new Condition(){
-                @Override
-                public boolean run(int number){
-                    System.out.println("exec condition @ nest 7");
-                    return number % 13 == 0;
-                }
-
-                @Override
-                public void result(int number){
-                    System.out.println("exec statement @ nest 7");
-                }
-            });
-            repository.select(number);
         }
     }
 }
