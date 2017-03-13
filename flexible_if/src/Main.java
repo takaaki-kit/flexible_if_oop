@@ -1,21 +1,11 @@
 public class Main {
     public static void main(String[] args) {
         IfRepository repository = new IfRepository();
-        MultipleOfThree three = new MultipleOfThree();
-        repository.create(three);
 
-        IfRepository nest_repository = new IfRepository();
-        NestExample1 nest_example1 = new NestExample1();
-        NestExample2 nest_example2 = new NestExample2();
-        nest_repository.create(nest_example1);
-        nest_repository.create(nest_example2);
-
-        three.nest(nest_repository);
-
-        repository.create(new Condition(){
+        repository.create(new NonNestableBranch(){
             @Override
-            public boolean run(int number){
-                System.out.println("exec condition @ MultipleOfFive");
+            public boolean condition(int number){
+                System.out.println("exec branch @ MultipleOfFive");
                 return number % 5 == 0;
             }
 
@@ -25,54 +15,41 @@ public class Main {
             }
         });
 
-        repository.select(33);
+        MultipleOfThree three = new MultipleOfThree();
+
+        IfRepository nest_repository = new IfRepository();
+        nest_repository.create(new MultipleOfFour());
+        three.nest(nest_repository);
+        repository.create(three);
+
+        repository.select(12);
     }
 
-    private static class NestExample1 extends Condition{
-        public NestExample1() {
-        }
 
-        @Override
-        public boolean run(int number) {
-            System.out.println("exec condition @ NestExample1");
-            return number % 7 == 0;
-        }
-
-        @Override
-        public void result() {
-            System.out.println("exec statement @ NestExample1");
-        }
-    }
-
-    private static class NestExample2 extends Condition{
-        public NestExample2() {
-        }
-
-        @Override
-        public boolean run(int number) {
-            System.out.println("exec condition @ NestExample2");
-            return number % 11 == 0;
-        }
-
-        @Override
-        public void result() {
-            System.out.println("exec statement @ NestExample2");
-        }
-    }
-
-    private static class MultipleOfThree extends Condition{
+    private static class MultipleOfThree extends NestableBranch{
         public MultipleOfThree() {
         }
 
         @Override
-        public boolean run(int number) {
-            System.out.println("exec condition @ MultipleOfThree");
+        public boolean condition(int number) {
+            System.out.println("exec branch @ MultipleOfThree");
             return number % 3 == 0;
+        }
+    }
+
+    private static class MultipleOfFour extends NonNestableBranch{
+        public MultipleOfFour() {
+        }
+
+        @Override
+        public boolean condition(int number) {
+            System.out.println("exec branch @ MultipleOfFour");
+            return number % 4 == 0;
         }
 
         @Override
         public void result() {
-            System.out.println("exec statement @ MultipleOfThree");
+            System.out.println("exec statement @ MultipleOfFour");
         }
     }
 }
