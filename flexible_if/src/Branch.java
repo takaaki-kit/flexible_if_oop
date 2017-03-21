@@ -1,4 +1,12 @@
 public abstract class Branch {
-    public abstract boolean unko(int number);
+    protected Nanka nanka;
+
+    public boolean unko(int number) {
+        if ( this.condition(number) ) {
+            nanka.aho();
+            return true;
+        }
+        return false;
+    }
     public abstract boolean condition(int number);
 }
