@@ -1,15 +1,15 @@
 public abstract class NestableBranch extends Branch{
-    private IfRepository repository;
+    private Selection selection = new Selection();
 
-    public void nest(IfRepository repository) {
-        this.repository = repository;
+    public void nest(Branch branch) {
+        this.selection.create(branch);
     }
 
     public boolean unko(int number) {
         setNanka(new Nanka(){
             @Override
             public void aho() {
-                repository.select(number);
+                selection.select(number);
             }
         });
         return super.unko(number);

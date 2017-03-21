@@ -1,5 +1,5 @@
 public abstract class NonNestableBranch extends Branch{
-    public void NonNestableBranch() {
+    public NonNestableBranch() {
         setNanka(new Nanka() {
             @Override
             public void aho() {

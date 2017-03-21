@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        IfRepository repository = new IfRepository();
+        Selection selection = new Selection();
 
-        repository.create(new NonNestableBranch(){
+        selection.create(new NonNestableBranch(){
             @Override
             public boolean condition(int number){
                 System.out.println("exec branch @ MultipleOfFive");
@@ -16,13 +16,10 @@ public class Main {
         });
 
         MultipleOfThree three = new MultipleOfThree();
+        three.nest(new MultipleOfFour());
+        selection.create(three);
 
-        IfRepository nest_repository = new IfRepository();
-        nest_repository.create(new MultipleOfFour());
-        three.nest(nest_repository);
-        repository.create(three);
-
-        repository.select(12);
+        selection.select(12);
     }
 
 
