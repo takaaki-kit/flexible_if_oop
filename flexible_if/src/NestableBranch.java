@@ -6,12 +6,12 @@ public abstract class NestableBranch extends Branch{
     }
 
     public boolean unko(int number) {
-        nanka = new Nanka(){
+        setNanka(new Nanka(){
             @Override
             public void aho() {
                 repository.select(number);
             }
-        };
+        });
         return super.unko(number);
     }
 }

@@ -1,5 +1,9 @@
 public abstract class Branch {
-    protected Nanka nanka;
+    private Nanka nanka;
+
+    void setNanka(Nanka nanka) {
+        this.nanka = nanka;
+    }
 
     public boolean unko(int number) {
         if ( this.condition(number) ) {
