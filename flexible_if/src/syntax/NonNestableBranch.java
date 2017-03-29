@@ -1,3 +1,5 @@
+package syntax;
+
 public abstract class NonNestableBranch extends Branch{
     public NonNestableBranch() {
         setRole(new Role() {
@@ -8,5 +10,5 @@ public abstract class NonNestableBranch extends Branch{
         });
     }
 
-    public abstract void block();
+    protected abstract void block();
 }

@@ -1,3 +1,5 @@
+package syntax;
+
 public abstract class Branch {
     private Role role;
 
@@ -12,5 +14,5 @@ public abstract class Branch {
         }
         return false;
     }
-    public abstract boolean condition(int number);
+    protected abstract boolean condition(int number);
 }
