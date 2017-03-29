@@ -3,6 +3,10 @@ package syntax;
 public abstract class Branch {
     private Role role;
 
+    protected interface Role {
+        void execute();
+    }
+
     void setRole(Role role) {
         this.role = role;
     }
