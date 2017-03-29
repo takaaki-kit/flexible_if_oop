@@ -3,7 +3,7 @@ package syntax;
 public abstract class Branch {
     private Role role;
 
-    protected interface Role {
+    interface Role {
         void execute();
     }
 
