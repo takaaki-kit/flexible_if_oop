@@ -1,13 +1,13 @@
 public abstract class Branch {
-    private Role nanka;
+    private Role role;
 
-    void setRole(Role nanka) {
-        this.nanka = nanka;
+    void setRole(Role role) {
+        this.role = role;
     }
 
     public boolean execute(int number) {
         if ( this.condition(number) ) {
-            nanka.execute();
+            role.execute();
             return true;
         }
         return false;

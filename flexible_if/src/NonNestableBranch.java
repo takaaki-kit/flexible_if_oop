@@ -3,10 +3,10 @@ public abstract class NonNestableBranch extends Branch{
         setRole(new Role() {
             @Override
             public void execute() {
-                result();
+                block();
             }
         });
     }
 
-    public abstract void result();
+    public abstract void block();
 }

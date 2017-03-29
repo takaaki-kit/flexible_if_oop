@@ -10,7 +10,7 @@ public class Main {
             }
 
             @Override
-            public void result(){
+            public void block(){
                 System.out.println("exec statement @ MultipleOfFive");
             }
         });
@@ -45,7 +45,7 @@ public class Main {
         }
 
         @Override
-        public void result() {
+        public void block() {
             System.out.println("exec statement @ MultipleOfFour");
         }
     }
