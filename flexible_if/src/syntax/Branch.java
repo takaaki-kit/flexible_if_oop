@@ -11,7 +11,7 @@ public abstract class Branch {
         this.role = role;
     }
 
-    public boolean execute(int number) {
+    boolean execute(int number) {
         if ( this.condition(number) ) {
             role.execute();
             return true;

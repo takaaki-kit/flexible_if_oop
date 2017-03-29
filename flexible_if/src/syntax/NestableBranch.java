@@ -7,7 +7,7 @@ public abstract class NestableBranch extends Branch{
         this.selection.add(branch);
     }
 
-    public boolean execute(int number) {
+    boolean execute(int number) {
         setRole(new Role(){
             @Override
             public void execute() {
