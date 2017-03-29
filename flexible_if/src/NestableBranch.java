@@ -6,7 +6,7 @@ public abstract class NestableBranch extends Branch{
     }
 
     public boolean unko(int number) {
-        setNanka(new Nanka(){
+        setNanka(new Role(){
             @Override
             public void aho() {
                 selection.select(number);

@@ -1,3 +1,3 @@
-public interface Nanka {
+public interface Role {
     public void aho();
 }

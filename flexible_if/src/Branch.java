@@ -1,7 +1,7 @@
 public abstract class Branch {
-    private Nanka nanka;
+    private Role nanka;
 
-    void setNanka(Nanka nanka) {
+    void setNanka(Role nanka) {
         this.nanka = nanka;
     }
 
