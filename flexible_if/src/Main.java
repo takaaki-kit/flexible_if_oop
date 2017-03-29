@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         Selection selection = new Selection();
 
-        selection.create(new NonNestableBranch(){
+        selection.add(new NonNestableBranch(){
             @Override
             public boolean condition(int number){
                 System.out.println("exec branch @ MultipleOfFive");
@@ -17,7 +17,7 @@ public class Main {
 
         MultipleOfThree three = new MultipleOfThree();
         three.nest(new MultipleOfFour());
-        selection.create(three);
+        selection.add(three);
 
         selection.select(12);
     }

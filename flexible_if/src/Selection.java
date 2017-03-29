@@ -7,7 +7,7 @@ public class Selection {
         this.selection = new ArrayList<Branch>();
     }
 
-    public void create(Branch branch) {
+    public void add(Branch branch) {
         this.selection.add(branch);
     }
 
