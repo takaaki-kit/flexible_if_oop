@@ -1,13 +1,13 @@
 public abstract class Branch {
     private Role nanka;
 
-    void setNanka(Role nanka) {
+    void setRole(Role nanka) {
         this.nanka = nanka;
     }
 
-    public boolean unko(int number) {
+    public boolean execute(int number) {
         if ( this.condition(number) ) {
-            nanka.aho();
+            nanka.execute();
             return true;
         }
         return false;

@@ -5,13 +5,13 @@ public abstract class NestableBranch extends Branch{
         this.selection.add(branch);
     }
 
-    public boolean unko(int number) {
-        setNanka(new Role(){
+    public boolean execute(int number) {
+        setRole(new Role(){
             @Override
-            public void aho() {
+            public void execute() {
                 selection.select(number);
             }
         });
-        return super.unko(number);
+        return super.execute(number);
     }
 }

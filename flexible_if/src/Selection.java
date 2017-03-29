@@ -13,7 +13,7 @@ public class Selection {
 
     public void select(int number) {
         for(Branch branch : selection){
-            if(branch.unko(number)){
+            if(branch.execute(number)){
                 return;
             }
         }

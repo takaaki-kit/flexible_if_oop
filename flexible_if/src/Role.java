@@ -1,3 +1,3 @@
 public interface Role {
-    public void aho();
+    public void execute();
 }
